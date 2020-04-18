@@ -8,8 +8,10 @@ err = False
 for i in range(m):
     s, c = map(int, input().split(" "))
     if s == 1 and c == 0:
-        print(0)
-        exit()
+        if n == 1:
+            print(0)
+            exit()
+        err = True
     elif ans[s - 1] == 0:
         ans[s - 1] = c
     elif not ans[s - 1] == c:
