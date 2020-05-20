@@ -5,14 +5,11 @@ n, m = map(int, input().split(" "))
 start = 1
 end = n
 
-_set = set()
-
-for _ in range(m):
-    _abs = min(end - start, start + n - end)
-    if _abs in _set:
-        end -= 1
-    print(start, end, min(end - start, start + n - end))
-    _set.add(_abs)
+wq = n // 4
+for i in range(m):
+    if i == wq and n % 2 == 0:
+        start += 1
+    print(start, end)
     start += 1
     end -= 1
 
