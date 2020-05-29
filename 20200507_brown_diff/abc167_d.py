@@ -25,7 +25,7 @@ k -= mg
 if cy != 0:
     k %= cy
 crnt = key
-if n > k:
+if n > fk:
     k = fk
     crnt = 1
 for i in range(k):
