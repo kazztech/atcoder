@@ -2,14 +2,30 @@ import math
 
 a, b, x = map(int, input().split(" "))
 
-c = 1000000000
-fn = lambda n, dn: a * n + dn * b
-ar = [0, c // 2, c]
-p = 1
-cnt = 1
+left = 0
+right = 1000000000
 
-while cnt != 100:
-    _len = len(str(cnt))
+if a * right + b * len(str(right)) < x:
+    print(right)
+    exit()
 
+while True:
+    if right - left <= 1:
+        break
+    middle = ((right - left) // 2) + left
+    c = a * middle + b * len(str(middle))
+    if x > c:
+        left = middle
+    else:
+        right = middle
 
-print(ar)
+if left == 0:
+    print(0)
+    exit()
+
+while True:
+    c = a * left + b * len(str(left))
+    if c > x:
+        print(left - 1)
+        exit()
+    left += 1
