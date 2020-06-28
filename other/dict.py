@@ -1,10 +1,11 @@
-def choose(n, a):
-    x = 1
-    y = 1
-    for i in range(a):
-        x *= n - 1
-        y *= i + 1
-    return x // y
+def comb(n, r, mod=float("inf")):
+    c = 1
+    m = 1
+    r = min(n - r, r)
+    for i in range(r):
+        c = c * (n - i) % mod
+        m = m * (i + 1) % mod
+    return c * pow(m, mod - 2, mod) % mod
 
 
 def pow2(n):
