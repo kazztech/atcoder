@@ -10,7 +10,7 @@ bcL = sorted([list(map(int,
 csl = 0
 for cnt, point in bcL:
     for i in range(cnt):
-        if aL[csl] >= point:
+        if csl == n or aL[csl] >= point:
             print(sum(aL))
             exit()
         aL[csl] = point
