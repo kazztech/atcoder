@@ -23,5 +23,4 @@ ans = 10000000
 for i in range(n):
     ans = min(ans, eS[i] + wS[i])
 
-print(eS, wS)
 print(ans)
