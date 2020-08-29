@@ -30,7 +30,15 @@ for y in range(h):
                 _map[sy + ny][sx + nx] = area_id
                 q.put([sy + ny, sx + nx])
 
-print(*_map, sep="\n")
+d = {}
+for y in range(h):
+    for x in range(w):
+        area_id = _map[y][x]
+        for sx, sy in [[1, 1], [1, -1], [-1, 1], [-1, -1], [
+                -2,
+                -2,
+        ]]:
+            pass
 
 # q = queue.Queue()
 # q.put([cx, cy])
