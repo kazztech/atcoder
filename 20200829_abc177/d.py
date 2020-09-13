@@ -21,12 +21,12 @@ for a, b in abL:
 ans = 1
 for k, v in d.items():
     if not visited[k]:
-        visited[k] = True
         cnt = 0
         q = queue.Queue()
         q.put(k)
         while q.qsize() != 0:
             ss = q.get()
+            visited[ss] = True
             cnt += 1
             if cnt >= n:
                 break
